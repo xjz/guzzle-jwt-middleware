@@ -57,7 +57,7 @@ class JwtMiddleware
             $token = $manager->getJwtToken()->getToken();
 
             return $handler($request->withHeader(
-                'Authorization',
+                'X-Authorization',
                 sprintf('%s %s', $this->authorizationHeaderType, $token)
             ), $options);
         };
